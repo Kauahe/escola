@@ -9,21 +9,21 @@
   {
     $comando = $pdo->prepare("INSERT INTO alunos VALUES($matricula, '$nome', $idade)");
     $resultado = $comando->execute();
-    header ("Location: cadastro.html");
+    header ("Location: cadastroo.html");
   }
 
   if(isset($_POST["excluir"]) )
   {
     $comando = $pdo->prepare("DELETE FROM alunos where matricula=$matricula");
     $resultado = $comando->execute();
-    header ("Location: cadastro.html");
+    header ("Location: cadastroo.html");
   }
 
   if(isset($_POST["alterar"]) )
   {
-    $comando = $pdo->prepare("UPDATE alunos SET nome='$nome', idade-$idade WHERE matricula=$matricula ");
+    $comando = $pdo->prepare("UPDATE alunos SET nome='$nome', idade=$idade WHERE matricula=$matricula");
     $resultado = $comando->execute();
-    header ("Location: cadastro.html");
+    header ("Location: cadastroo.html");
   }
 
   if(isset($_POST["listar"]) )
